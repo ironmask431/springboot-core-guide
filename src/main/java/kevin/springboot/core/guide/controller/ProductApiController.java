@@ -1,6 +1,7 @@
 package kevin.springboot.core.guide.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import kevin.springboot.core.guide.annotation.UserActionLog;
@@ -11,6 +12,9 @@ import kevin.springboot.core.guide.entity.User;
 import kevin.springboot.core.guide.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -82,4 +86,30 @@ public class ProductApiController {
         return ResponseEntity.status(HttpStatus.OK)
                              .body(productService.deleteProduct(id));
     }
+
+    @Operation(summary = "상품들을 페이지 단위로 조회한다.")
+    @GetMapping("/by-name")
+    public ResponseEntity<Page<ProductResponse>> findPageAllProduct(@Parameter(description = "상품명") @RequestParam(name = "name", required = false) String name,
+                                                                    @PageableDefault(size = 5) Pageable pageable) {
+        return ResponseEntity.status(HttpStatus.OK)
+                             .body(productService.findPageAllProduct(name, pageable));
+    }
+
+    @Operation(summary = "상품들을 페이지 단위로 조회한다.")
+    @GetMapping("/by-name2")
+    public ResponseEntity<Page<ProductResponse>> findPageAllProduct_2(@Parameter(description = "상품명") @RequestParam(name = "name", required = false) String name,
+                                                                    @PageableDefault(size = 5) Pageable pageable) {
+        return ResponseEntity.status(HttpStatus.OK)
+                             .body(productService.findPageAllProduct_2(name, pageable));
+    }
+
+    @Operation(summary = "상품들을 페이지 단위로 조회한다.")
+    @GetMapping("/by-name3")
+    public ResponseEntity<Page<ProductResponse>> findPageAllProduct_3(@Parameter(description = "상품명") @RequestParam(name = "name", required = false) String name,
+                                                                      @PageableDefault(size = 5) Pageable pageable) {
+        return ResponseEntity.status(HttpStatus.OK)
+                             .body(productService.findPageAllProduct_3(name, pageable));
+    }
+
+
 }
