@@ -1,1 +1,3 @@
 rootProject.name = 'springboot.core.guide'
+include 'core-guide-batch-api'
+

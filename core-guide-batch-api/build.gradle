@@ -1,0 +1,28 @@
+plugins {
+    id("java")
+}
+
+group = "kevin"
+version = "0.0.1-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(platform("org.junit:junit-bom:5.9.1"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
+
+//bootJar, jar 추가 - bootjar 생성여부 - 구동이 필요한 모듈일 경우.
+bootJar {
+    enabled = true
+}
+
+jar {
+    enabled = true
+}
