@@ -33,7 +33,7 @@ public class SwaggerConfig {
 
 
     private Info apiInfo() {
-        return new Info().title("springdoc-openapi-starter-webmvc-ui")
+        return new Info().title("SpringBoot-core-guide-API")
                          .description("springdoc-openapi-starter-webmvc-ui 을 이용한 Swagger UI")
                          .version("1.0.0");
     }

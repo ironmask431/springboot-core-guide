@@ -6,7 +6,7 @@ import kevin.springboot.core.guide.entity.Product;
 import kevin.springboot.core.guide.entity.User;
 import kevin.springboot.core.guide.exception.ProductNotFoundException;
 import kevin.springboot.core.guide.repository.ProductRepository;
-import kevin.springboot.core.util.CommonUtil;
+import kevin.springboot.core.guide.util.CommonUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;

@@ -12,17 +12,12 @@ repositories {
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+
+    //root 모듈의 클래스들을 import 하기위한 설정.
+    //다른 모듈을 import 하고 싶으면 ':모듈명' 으로 설정한다.
+    implementation project(':')
 }
 
 tasks.test {
     useJUnitPlatform()
-}
-
-//bootJar, jar 추가 - bootjar 생성여부 - 구동이 필요한 모듈일 경우.
-bootJar {
-    enabled = true
-}
-
-jar {
-    enabled = true
 }

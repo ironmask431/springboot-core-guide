@@ -1,11 +1,11 @@
-package kevin;
+package kevin.springboot.core.guide;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Application {
+public class BatchApiApplication {
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(BatchApiApplication.class, args);
     }
 }

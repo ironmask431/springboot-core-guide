@@ -1,4 +1,4 @@
-package kevin.springboot.core.util;
+package kevin.springboot.core.guide.util;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;

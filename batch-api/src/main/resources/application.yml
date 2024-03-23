@@ -1,9 +1,9 @@
 server:
-  port: 8080
+  port: 8081
 
 #springdoc - swagger
 springdoc:
-  packages-to-scan: kevin.springboot.core.guide.controller
+  packages-to-scan: kevin.springboot.core.guide.batch.api.controller
   default-consumes-media-type: application/json;charset=UTF-8
   default-produces-media-type: application/json;charset=UTF-8
   swagger-ui:
