@@ -4,7 +4,7 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-@RestControllerAdvice(basePackages = "kevin.springboot.core.guide.controller")
+@RestControllerAdvice(basePackages = "kevin.springboot.core.guide")
 public class ControllerAdvice {
 
     //@GetMapping 컨트롤러에서 RequestParam 을 DTO 로 받기 위한 설정

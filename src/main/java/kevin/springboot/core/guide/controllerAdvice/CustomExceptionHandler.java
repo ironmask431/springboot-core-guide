@@ -12,7 +12,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-@RestControllerAdvice(basePackages = "kevin.springboot.core.guide.controller")
+@RestControllerAdvice(basePackages = "kevin.springboot.core.guide")
 @Slf4j
 public class CustomExceptionHandler {
 

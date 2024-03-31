@@ -1,4 +1,4 @@
-package kevin.springboot.core.guide.controller;
+package kevin.springboot.core.guide.api.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

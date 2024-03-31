@@ -17,6 +17,7 @@ configurations {
 	}
 }
 
+// 기존에 repositories {}, dependencies {} 부분을  allprojects {} 로 감싼다.
 // allprojects : ROOT, 하위 모듈 의존성 통합 관리
 // repositories{}, dependencies{} 두 항목을 감싸도록 추가한다.
 allprojects {
@@ -30,6 +31,7 @@ allprojects {
 		mavenCentral()
 	}
 
+	//ROOT, 하위 모듈 모두 필요한 의존성은 여기에 추가하고 모듈별로 별도로 필요한 의존성은 각 모듈의 build.gradle에 추가한다.
 	dependencies {
 		implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 		implementation 'org.springframework.boot:spring-boot-starter-validation'

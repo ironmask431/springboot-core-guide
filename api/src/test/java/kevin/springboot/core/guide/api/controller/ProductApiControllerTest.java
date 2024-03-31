@@ -1,19 +1,18 @@
-package kevin.springboot.core.guide.controller;
+package kevin.springboot.core.guide.api.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import kevin.springboot.core.guide.api.service.ProductService;
 import kevin.springboot.core.guide.dto.ProductRequest;
 import kevin.springboot.core.guide.dto.ProductResponse;
 import kevin.springboot.core.guide.entity.User;
 import kevin.springboot.core.guide.enums.UserRole;
 import kevin.springboot.core.guide.jwt.JwtTokenProvider;
 import kevin.springboot.core.guide.repository.UserRepository;
-import kevin.springboot.core.guide.service.ProductService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpHeaders;

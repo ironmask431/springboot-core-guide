@@ -1,15 +1,15 @@
-package kevin.springboot.core.guide.controller;
+package kevin.springboot.core.guide.api.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
-import kevin.springboot.core.guide.annotation.UserActionLog;
 import kevin.springboot.core.guide.annotation.Timer;
+import kevin.springboot.core.guide.annotation.UserActionLog;
+import kevin.springboot.core.guide.api.service.ProductService;
 import kevin.springboot.core.guide.dto.ProductRequest;
 import kevin.springboot.core.guide.dto.ProductResponse;
 import kevin.springboot.core.guide.entity.User;
-import kevin.springboot.core.guide.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;

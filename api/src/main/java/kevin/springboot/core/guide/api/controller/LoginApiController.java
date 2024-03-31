@@ -1,12 +1,12 @@
-package kevin.springboot.core.guide.controller;
+package kevin.springboot.core.guide.api.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
+import kevin.springboot.core.guide.api.service.LoginService;
 import kevin.springboot.core.guide.dto.LoginRequest;
 import kevin.springboot.core.guide.dto.LoginResponse;
 import kevin.springboot.core.guide.dto.SignUpRequest;
-import kevin.springboot.core.guide.service.LoginService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -1,3 +1,4 @@
+# applicaton.yml 은 모듈간 설정공유가 되지않으므로 각각 똑같이 설정해줘야 한다.
 server:
   port: 8081
 

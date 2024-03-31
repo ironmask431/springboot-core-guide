@@ -1,8 +1,7 @@
-package kevin.springboot.core.guide.batch.api.controller;
+package kevin.springboot.core.guide.api.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-//root 모듈의 DTO클래스를 import 해올 수 있다.
 import kevin.springboot.core.guide.dto.MemberDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
  * 모듈1 : kevin.springboot.core.guide.api.controller
  * 모듈2 : kevin.springboot.core.guide.batch.api.controller
  */
-
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/test")
@@ -27,7 +25,7 @@ public class TestController {
     @Operation(summary = "테스트 api")
     @GetMapping
     public String test(){
-        return "batch-api test success.";
+        return "api test success.";
     }
 
     @Operation(summary = "dto 타입으로 매핑받고 리턴하기 api")

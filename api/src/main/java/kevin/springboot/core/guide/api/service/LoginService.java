@@ -1,4 +1,4 @@
-package kevin.springboot.core.guide.service;
+package kevin.springboot.core.guide.api.service;
 
 import kevin.springboot.core.guide.dto.LoginRequest;
 import kevin.springboot.core.guide.dto.LoginResponse;
