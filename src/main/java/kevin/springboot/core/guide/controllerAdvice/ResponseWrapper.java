@@ -23,15 +23,15 @@ public class ResponseWrapper implements ResponseBodyAdvice<Object> {
 
     @Override
     public Object beforeBodyWrite(Object body, MethodParameter returnType, MediaType selectedContentType, Class<? extends HttpMessageConverter<?>> selectedConverterType, ServerHttpRequest request, ServerHttpResponse response) {
-        if(body instanceof Page){
-            return new BaseResponseDTO((Page)body);
+        if (body instanceof Page) {
+            return new BaseResponseDTO((Page) body);
         }
-        if(body instanceof ExceptionResponse){
-            return new BaseResponseDTO((ExceptionResponse)body);
+        if (body instanceof ExceptionResponse) {
+            return new BaseResponseDTO((ExceptionResponse) body);
         }
-        if(body instanceof String){
+        if (body instanceof String) {
             try {
-                return new ObjectMapper().writeValueAsString(new BaseResponseDTO((String)body));
+                return new ObjectMapper().writeValueAsString(new BaseResponseDTO((String) body));
             } catch (JsonProcessingException e) {
                 throw new RuntimeException(e);
             }

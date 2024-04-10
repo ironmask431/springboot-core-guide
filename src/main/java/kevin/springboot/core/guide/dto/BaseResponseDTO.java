@@ -23,21 +23,21 @@ public class BaseResponseDTO<T> {
     }
 
     public BaseResponseDTO(String response) {
-        this.response = (T)response;
+        this.response = (T) response;
     }
 
     public BaseResponseDTO(ExceptionResponse response) {
         this.ok = false;
         this.status = response.getCode();
-        this.response = (T)response;
+        this.response = (T) response;
     }
 
     public BaseResponseDTO(Page page) {
-        this.response = (T)page.getContent();
+        this.response = (T) page.getContent();
         this.page = ResponsePageDTO.builder()
-                .total(page.getTotalElements())
-                .current(page.getNumber())
-                .last(page.getTotalElements() == 0 ? 0 : page.getTotalPages() - 1)
-                .build();
+                                   .total(page.getTotalElements())
+                                   .current(page.getNumber())
+                                   .last(page.getTotalElements() == 0 ? 0 : page.getTotalPages() - 1)
+                                   .build();
     }
 }
