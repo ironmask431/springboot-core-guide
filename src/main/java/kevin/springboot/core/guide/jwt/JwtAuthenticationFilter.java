@@ -59,8 +59,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter { // OncePerRe
 
         } catch (Exception e) {
             log.error("doFilterInternal - Exception 발생  : {},  message : {}", request.getRequestURI(), e, e.getMessage());
-            //기타 exception (UserNotFoundException 등) 발생 시 401 error response
-            createErrorResponse(response, HttpStatus.UNAUTHORIZED, e);
+            //기타 exception (UserNotFoundException 등) 발생 시 500 error response
+            createErrorResponse(response, HttpStatus.INTERNAL_SERVER_ERROR, e);
         }
         log.info("doFilterInternal 종료");
     }

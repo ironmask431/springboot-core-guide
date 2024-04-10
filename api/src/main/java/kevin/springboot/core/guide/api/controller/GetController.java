@@ -14,12 +14,20 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1/get-api")
 public class GetController {
 
-    @Operation(summary = "Get 기본 api")
+    @Operation(summary = "Get 기본 api- return String")
     @GetMapping("/name")
     public String getName() {
         log.info("info 로그 : getName 메소드가 호출 되었습니다.");
         log.error("error 로그");
         return "kevin"; //return 타입 String 인 경우는 response header - Content-type : text/plain 으로 응답함
+    }
+
+    @Operation(summary = "Get 기본 api - return boolean")
+    @GetMapping("/true")
+    public boolean getTrue() {
+        log.info("info 로그 : getTrue 메소드가 호출 되었습니다.");
+        log.error("error 로그");
+        return true;
     }
 
 

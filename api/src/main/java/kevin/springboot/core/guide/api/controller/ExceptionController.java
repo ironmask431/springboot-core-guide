@@ -14,4 +14,9 @@ public class ExceptionController {
     public void goRuntimeException(){
         throw new RuntimeException();
     }
+
+    @GetMapping("/index-exception")
+    public void goIndexOutBoundException(){
+        throw new IndexOutOfBoundsException();
+    }
 }
