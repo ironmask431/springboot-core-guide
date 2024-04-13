@@ -77,14 +77,12 @@ public class AspectConfig {
     }
 
     //@AfterReturning 메소드에서 예외 발생 시 실행.
-    //매개변수 (Exception e) 적용시 계속 구동 에러가 발생해서 활성화 하지 못함. 컨트롤러 exception 핸들링은 @ControllerAdvice + @ExceptionHandler 통해서 관리하므로 이건 필요없을듯.
-//    @AfterThrowing("userActionLog()") //userActionLog() pointcut 적용
-//    public void afterThrowing(JoinPoint joinPoint, Exception e) {
-//        log.info("LoggingAspect - afterThrowing: {}, exception: {}", joinPoint.getSignature().getName()); // 메소드명, exception 명
-//
-//        for(Object arg : joinPoint.getArgs()){
-//            log.info("joinpoint arg : {}" , arg);
-//        }
-//    }
+    @AfterThrowing(value = "userActionLog()", throwing = "ex") //userActionLog() pointcut 적용
+    public void afterThrowing(JoinPoint joinPoint, RuntimeException ex) {
+        log.info("AOP - afterThrowing: {}, exception: {}", joinPoint.getSignature().getName(), ex.toString()); // 메소드명, exception 명
+        for(Object arg : joinPoint.getArgs()){
+            log.info("joinpoint arg : {}" , arg);
+        }
+    }
 
 }
