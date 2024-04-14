@@ -18,4 +18,5 @@
 11. Flyway로 DB migration 관리 설정 
 12. AOP 기능활용 (API 요청시 - userActionLog 로깅 구축)
 13. 멀티 모듈 구축 (root, api, batch-api 모듈 분리)
+14. Profile 이용하여 local,dev,prd 환경별로 다른 application.yml 설정하기
 
