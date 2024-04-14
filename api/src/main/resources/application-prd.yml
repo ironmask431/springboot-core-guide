@@ -36,4 +36,4 @@ jwt:
   issuer: kevin
   expire: 3600000 # 1000 * 60 * 60 = 1시간
 
-url: local.test.com
+url: prd.test.com
