@@ -18,8 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/test")
-@PreAuthorize("isAuthenticated()") // 이 컨트롤러의 api 들은 인증된 사용자에게만 api 응답이 가능하다.
-@Tag(name = "TEST API", description = "Batch-api 테스트 api")
+@Tag(name = "TEST API", description = "api 테스트 api")
 public class TestController {
 
     @Operation(summary = "테스트 api")

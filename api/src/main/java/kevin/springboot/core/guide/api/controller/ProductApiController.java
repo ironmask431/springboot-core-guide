@@ -27,7 +27,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Tag(name = "상품 API", description = "상품 API 입니다.")
 @RequestMapping("/product")
-@PreAuthorize("isAuthenticated()") // 이 컨트롤러의 api 들은 인증된 사용자에게만 api 응답이 가능하다.
+@PreAuthorize("isAuthenticated()") // 이 컨트롤러의 api 들은 인증된 요청에게만 api 응답한다. (미인증시 401 unAuthorized)
 @Slf4j
 public class ProductApiController {
 

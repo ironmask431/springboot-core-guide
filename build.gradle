@@ -18,7 +18,8 @@ configurations {
 }
 
 // 기존에 repositories {}, dependencies {} 부분을  allprojects {} 로 감싼다.
-// allprojects : ROOT, 하위 모듈 의존성 통합 관리
+// allprojects : ROOT, 서브(하위) 모듈 의존성 통합 관리
+// subprojects : 서브(하위) 모듈 의존성 통합 관리
 // repositories{}, dependencies{} 두 항목을 감싸도록 추가한다.
 allprojects {
 

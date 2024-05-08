@@ -15,7 +15,7 @@ dependencies {
 
     //root 모듈의 클래스들을 import 하기위한 설정.
     //다른 모듈을 import 하고 싶으면 ':모듈명' 으로 설정한다.
-    //현재는 root 모듈을 참조하지만 공유할 클래스들은 core 모듈을 따로 만들어서 모아놓으면 좋을 듯하다.
+    //현재는 root 모듈을 참조하지만 공유할 클래스들은 core 모듈을 따로 만들어서 모아놓으면 좋을 듯하다. (:core)
     implementation project(':')
 }
 
