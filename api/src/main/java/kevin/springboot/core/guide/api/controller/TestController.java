@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Swagger 문서에서 모듈별로 별도로 api가 나오게 하기 위해서 컨트롤러의 패키지명을 모듈별로 각각 다르게 할 필요가 있다.
+ * Swagger 문서에서 모듈별로 별도로 api가 나오게 하기 위해서 컨트롤러의 패키지명을 모듈별로 각각 다르게 할 필요가 있음.
  * 모듈1 : kevin.springboot.core.guide.api.controller
  * 모듈2 : kevin.springboot.core.guide.batch.api.controller
  */
