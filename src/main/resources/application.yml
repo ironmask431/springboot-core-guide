@@ -34,3 +34,8 @@ jwt:
   secret: c3ByaW5nYm9vdC1jb3JlLWd1aWRlLWtldmluLWdvZ29nb2dvZ29nb2dvZ29nb2dvZ28=
   issuer: kevin
   expire: 3600000 # 1000 * 60 * 60 = 1시간
+
+feign:
+  api:
+    url: localhost:8080
+    token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Imlyb25tYXNrNDMxQGdtYWlsLmNvbSIsInJvbGUiOlt7ImF1dGhvcml0eSI6IkFETUlOIn0seyJhdXRob3JpdHkiOiJNQU5BR0VSIn0seyJhdXRob3JpdHkiOiJVU0VSIn1dLCJleHAiOjE3MTUxNjQzNTYsImlzc3VlciI6ImtldmluIiwiaXNzdWVyQXQiOjE3MTUxNjA3NTYzNDB9.qH2NFmDdIOtNEMqC4MqcPWdzAg-yA9C7i9iLwJtKHPI
