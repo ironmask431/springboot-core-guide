@@ -69,7 +69,7 @@ public class JwtTokenProvider {
         log.info("getAuthentication -  시작");
         UserDetails userDetails = userDetailService.loadUserByUsername(getUsername(token));
         log.info("getAuthentication -  조회 완료 username : {}, authorities : {}", userDetails.getUsername(), userDetails.getAuthorities());
-        return new UsernamePasswordAuthenticationToken(userDetails, "", userDetails.getAuthorities());
+        return new UsernamePasswordAuthenticationToken(userDetails, token, userDetails.getAuthorities());
     }
 
     //token 에서 유저식별정보(email) 을 가져온다.

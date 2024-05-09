@@ -3,27 +3,34 @@ package kevin.springboot.core.guide.feign.api;
 import kevin.springboot.core.guide.dto.ProductResponse;
 import kevin.springboot.core.guide.feign.util.BaseUriCreator;
 import kevin.springboot.core.guide.feign.util.BearerTokenFormatter;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.net.URI;
 import java.util.List;
 
 @Service
+@Slf4j
 public class ApiFeignClientProxyService implements ApiProxyService {
 
     private final ApiFeignClient apiFeignClient;
     private final String prefixUrl;
-    private final String authToken;
 
-    public ApiFeignClientProxyService(ApiFeignClient apiFeignClient) {
+    public ApiFeignClientProxyService(ApiFeignClient apiFeignClient, @Value("${feign.api.url}") String prefixUrl) {
         this.apiFeignClient = apiFeignClient;
-        this.prefixUrl = "localhost:8080";
-        this.authToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Imlyb25tYXNrNDMxQGdtYWlsLmNvbSIsInJvbGUiOlt7ImF1dGhvcml0eSI6IkFETUlOIn0seyJhdXRob3JpdHkiOiJNQU5BR0VSIn0seyJhdXRob3JpdHkiOiJVU0VSIn1dLCJleHAiOjE3MTUxNjQzNTYsImlzc3VlciI6ImtldmluIiwiaXNzdWVyQXQiOjE3MTUxNjA3NTYzNDB9.qH2NFmDdIOtNEMqC4MqcPWdzAg-yA9C7i9iLwJtKHPI";
+        this.prefixUrl = prefixUrl;
     }
 
     @Override
     public List<ProductResponse> findAllProduct() {
         final URI uri = BaseUriCreator.create(prefixUrl);
+        //SecurityContextHolder 에서 인증토큰 조회
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String authToken = (String)authentication.getCredentials();
+        log.info("findAllProduct() - authToken = {}", authToken);
         final String token = BearerTokenFormatter.format(authToken);
         return apiFeignClient.findAllProduct(uri, token).getResponse();
     }
