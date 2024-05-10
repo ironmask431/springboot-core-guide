@@ -2,6 +2,7 @@ package kevin.springboot.core.guide.api.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import kevin.springboot.core.guide.api.config.ProfileBean;
 import kevin.springboot.core.guide.dto.MemberDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -21,9 +22,11 @@ import org.springframework.web.bind.annotation.RestController;
 @Tag(name = "TEST API", description = "api 테스트 api")
 public class TestController {
 
+    private final ProfileBean profileBean;
+
     @Operation(summary = "테스트 api")
     @GetMapping
-    public String test(){
+    public String test() {
         return "api test success.";
     }
 
@@ -31,5 +34,11 @@ public class TestController {
     @GetMapping("/request-dto")
     public MemberDto getRequestDto(@Validated MemberDto dto) {
         return dto;
+    }
+
+    @Operation(summary = "profile 확인 api")
+    @GetMapping("/profile")
+    public String profile() {
+        return profileBean.getActiveProfile();
     }
 }

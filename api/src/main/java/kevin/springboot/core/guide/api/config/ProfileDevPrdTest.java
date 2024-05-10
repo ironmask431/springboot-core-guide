@@ -4,10 +4,11 @@ import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Component;
 
-@Component
+@Configuration
 @RequiredArgsConstructor
 @Slf4j
 @Profile("dev | prd") // 환경변수 dev 또는 prd 일때 Bean 등록됨.
@@ -20,5 +21,10 @@ public class ProfileDevPrdTest {
     @PostConstruct // 의존성 주입이 완료된 후 메소드가 실행되도록 함.
     public void init() {
         log.info("url : {}", url);
+    }
+
+    @Bean
+    public ProfileBean profileBean() {
+        return new ProfileBean("devPrd");
     }
 }
