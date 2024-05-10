@@ -13,6 +13,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ApiApplication {
     public static void main(String[] args) {
+//        root 모듈의 application.yml 을 참조하기 위한 설정.
+//        root 모듈의 application.yml 에는 모든 모듈이 공통으로 사용하는 설정값을 입력해놓으면 하위 모듈에 설정값이 중복되는 현상을 줄일 수 있다.
+//        각 하위 모듈별로 존재하는 application-(모듈명).yml 에는 모듈별 고유 설정을 입력해놓는다.
+//        *주의 : 하위 모듈에 application.yml 파일이 있으면, root모듈의 application.yml을 참조하지 않고,
+//        가까이에 있는 현재 모듈의 application.yml을 참조하므로, 하위 모듈의 yml 파일은 이름을 다르게 해놔야 한다.
+//        ex) application-api.yml
+        System.setProperty("spring.config.name", "application,application-api");
         SpringApplication.run(ApiApplication.class, args);
     }
 }

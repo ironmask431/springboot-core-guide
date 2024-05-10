@@ -1,39 +1,4 @@
-# applicaton.yml 은 모듈간 설정공유가 되지않으므로 각각 똑같이 설정해줘야 한다.
 server:
   port: 8080
-
-#springdoc - swagger
-springdoc:
-  packages-to-scan: kevin.springboot.core.guide.batch.api.controller
-  default-consumes-media-type: application/json;charset=UTF-8
-  default-produces-media-type: application/json;charset=UTF-8
-  swagger-ui:
-    path: /
-    disable-swagger-default-url: true
-    display-request-duration: true
-    operations-sorter: alpha
-
-spring:
-  jpa:
-    hibernate:
-      ddl-auto: validate # create, create-drop, update, validate, none # JPA를 통해 실행되는 ddl 옵션. flyway를 통해서 테이블 생성할 것이므로 validate 으로 변경함.
-    #콘솔에 SQL 출력
-    show-sql: true
-    properties:
-      hibernate:
-        format_sql: true
-
-  # h2 DB 접속정보
-  datasource:
-    #driver-class-name: com.mysql.cj.jdbc.Driver
-    driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:3306/springboot_core_guide
-    username: root
-    password: 1234
-
-jwt:
-  secret: c3ByaW5nYm9vdC1jb3JlLWd1aWRlLWtldmluLWdvZ29nb2dvZ29nb2dvZ29nb2dvZ28=
-  issuer: kevin
-  expire: 3600000 # 1000 * 60 * 60 = 1시간
 
 url: prd.test.com

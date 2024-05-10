@@ -1,4 +1,4 @@
 server:
   port: 8080
 
-url: dev.test.com
+url: local.test.com
