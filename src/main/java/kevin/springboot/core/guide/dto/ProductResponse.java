@@ -32,8 +32,12 @@ public class ProductResponse {
     @Schema(description = "수정 일자")
     private LocalDateTime updatedAt;
 
+    public ProductResponse() {
+    }
+
     @Builder
-    public ProductResponse(Long id, String name, Integer price, Integer stock, Boolean isActive, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public ProductResponse(Long id, String name, Integer price, Integer stock,
+                           Boolean isActive, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.name = name;
         this.price = price;
