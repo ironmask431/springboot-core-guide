@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloApiController {
 
     @Hidden //swagger에서 표시하지 않을 api
-    @GetMapping
+    @GetMapping("/hello")
     public String getHello() {
         return "hello";
     }

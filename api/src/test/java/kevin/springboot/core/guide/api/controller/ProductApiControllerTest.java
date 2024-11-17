@@ -99,11 +99,11 @@ public class ProductApiControllerTest {
         mockMvc.perform(get("/product")
                        .headers(httpHeaders))  // mockMvc 요청시 토큰이 추가된 헤더를 적용해준다.
                .andExpect(status().isOk())
-               .andExpect(jsonPath("$[0].name").exists())
-               .andExpect(jsonPath("$[0].price").exists())
-               .andExpect(jsonPath("$[0].stock").exists())
-               .andExpect(jsonPath("$[0].createdAt").exists())
-               .andExpect(jsonPath("$[0].updatedAt").exists())
+               .andExpect(jsonPath("$.response[0].name").exists())
+               .andExpect(jsonPath("$.response[0].price").exists())
+               .andExpect(jsonPath("$.response[0].stock").exists())
+               .andExpect(jsonPath("$.response[0].createdAt").exists())
+               .andExpect(jsonPath("$.response[0].updatedAt").exists())
                .andDo(print());
     }
 
@@ -121,11 +121,11 @@ public class ProductApiControllerTest {
         mockMvc.perform(get("/product/{id}", id)
                        .headers(httpHeaders))
                .andExpect(status().isOk())
-               .andExpect(jsonPath("$.name").exists())
-               .andExpect(jsonPath("$.price").exists())
-               .andExpect(jsonPath("$.stock").exists())
-               .andExpect(jsonPath("$.createdAt").exists())
-               .andExpect(jsonPath("$.updatedAt").exists())
+               .andExpect(jsonPath("$.response.name").exists())
+               .andExpect(jsonPath("$.response.price").exists())
+               .andExpect(jsonPath("$.response.stock").exists())
+               .andExpect(jsonPath("$.response.createdAt").exists())
+               .andExpect(jsonPath("$.response.updatedAt").exists())
                .andDo(print());
     }
 
@@ -158,11 +158,11 @@ public class ProductApiControllerTest {
                        .contentType(MediaType.APPLICATION_JSON) // POST, PUT, PATCH 요청 시 필요
                        .content(content)) // body에 request 데이터 입력
                .andExpect(status().isCreated())
-               .andExpect(jsonPath("$.name").exists())
-               .andExpect(jsonPath("$.price").exists())
-               .andExpect(jsonPath("$.stock").exists())
-               .andExpect(jsonPath("$.createdAt").exists())
-               .andExpect(jsonPath("$.updatedAt").exists())
+               .andExpect(jsonPath("$.response.name").exists())
+               .andExpect(jsonPath("$.response.price").exists())
+               .andExpect(jsonPath("$.response.stock").exists())
+               .andExpect(jsonPath("$.response.createdAt").exists())
+               .andExpect(jsonPath("$.response.updatedAt").exists())
                .andDo(print());
     }
 
@@ -181,7 +181,7 @@ public class ProductApiControllerTest {
                        .contentType(MediaType.APPLICATION_JSON)
                        .content(content))
                .andExpect(status().isOk())
-               .andExpect(jsonPath("$").value(true))
+               .andExpect(jsonPath("$.response").value(true))
                .andDo(print());
     }
 
@@ -197,7 +197,7 @@ public class ProductApiControllerTest {
         mockMvc.perform(delete("/product/{id}", id)
                        .headers(httpHeaders))
                .andExpect(status().isOk())
-               .andExpect(jsonPath("$").value(true))
+               .andExpect(jsonPath("$.response").value(true))
                .andDo(print());
     }
 

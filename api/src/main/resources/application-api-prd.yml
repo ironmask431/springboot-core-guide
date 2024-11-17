@@ -1,4 +1,2 @@
-server:
-  port: 8080
-
+# application-api.yml 의 내용을 override 한다.
 url: prd.test.com

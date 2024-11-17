@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Tag(name = "TEST API", description = "api 테스트 api")
 public class TestController {
 
-    private final ProfileBean profileBean;
+//    private final ProfileBean profileBean;
 
     @Operation(summary = "테스트 api")
     @GetMapping
@@ -36,9 +36,9 @@ public class TestController {
         return dto;
     }
 
-    @Operation(summary = "profile 확인 api")
-    @GetMapping("/profile")
-    public String profile() {
-        return profileBean.getActiveProfile();
-    }
+//    @Operation(summary = "profile 확인 api")
+//    @GetMapping("/profile")
+//    public String profile() {
+//        return profileBean.getActiveProfile();
+//    }
 }

@@ -74,9 +74,9 @@ class TestControllerTest {
                        .param("email", email)
                        .param("createDateTime", createDateTime))
                .andExpect(status().isOk())
-               .andExpect(jsonPath("$.name").value(name))
-               .andExpect(jsonPath("$.email").value(email))
-               .andExpect(jsonPath("$.createDateTime").exists())
+               .andExpect(jsonPath("$.response.name").value(name))
+               .andExpect(jsonPath("$.response.email").value(email))
+               .andExpect(jsonPath("$.response.createDateTime").exists())
                .andDo(print());
     }
 }

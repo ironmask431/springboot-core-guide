@@ -26,9 +26,10 @@ public class EnviromentTest {
 
         if (env.acceptsProfiles(Profiles.of("dev"))) {
             log.info("this env on dev.");
-        }
-        if (env.acceptsProfiles(Profiles.of("prd"))) {
+        } else if (env.acceptsProfiles(Profiles.of("prd"))) {
             log.info("this env on prd.");
+        } else {
+            log.info("this env on local.");
         }
     }
 }
