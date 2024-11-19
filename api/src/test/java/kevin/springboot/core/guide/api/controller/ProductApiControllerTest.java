@@ -47,7 +47,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @Transactional // 테스트 과정에서 DB 변경내역 모두 rollback 처리
 @TestPropertySource(locations = "classpath:application-api.yml")
 // @SpringBootTest 환경에서는 기본적으로 application.yml 파일만 참고한다.
-// api 모듈 테스트코드에서 application-api.yml 의 value값을 읽지못하면 오류가 발생 하는 케이스가 있다.
+// api 모듈 테스트코드 실행 시 bean을 생성할 때 application-api.yml 의 value값을 반드시 참조해야 하는경우 에러가 발생한다.
 // application-api.yml 파일에 있는 value 값들은 테스트 코드에서도 읽을 수 있게 하기 위해 @TestPropertySource 설정을 해준다.
 public class ProductApiControllerTest {
 
