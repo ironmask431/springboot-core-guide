@@ -1,6 +1,6 @@
 # 공통 설정값들은 root 모듈의 application.yml 에서 잃어 오므로, 하위모듈 yml 에는
 # port 번호와 같은 하위모듈 고유의 값이 필요한 부분만 설정해놓는다. 
 server:
-  port: 8080
+  port: 8082
 
 url: local.test.com
