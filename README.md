@@ -1,10 +1,12 @@
-# 스프링부트 핵심가이드
+# 스프링부트 기본 가이드
+
+https://dynamic-cent-685.notion.site/SpringBoot-basic-5adbe658fea344d8bd7fca1ae643d76e
 
 ### 버전정보
 1. SpringBoot 3.2.1
 2. java 17
 
-### 구현한 것
+### 구현 내용
 1. REST API 구축
 2. 예외처리(ControllerAdvice, ExceptionHandler)
 3. Swagger(Springdoc)를 이용하여 API 문서화
