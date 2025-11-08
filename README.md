@@ -1,4 +1,4 @@
-# 스프링부트 기본 가이드
+# 스프링부트 다양한 기능 구현
 
 https://dynamic-cent-685.notion.site/SpringBoot-basic-5adbe658fea344d8bd7fca1ae643d76e
 
