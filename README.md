@@ -23,4 +23,5 @@ https://dynamic-cent-685.notion.site/SpringBoot-basic-5adbe658fea344d8bd7fca1ae6
 14. 멀티 모듈 구축 (root, api, batch-api 모듈 분리)
 15. Profile 이용하여 local,dev,prd 환경별로 다른 application.yml 설정, Bean 등록하기
 16. FeignClient 로 서비스(모듈)간 api 통신 구축
+17. CompletableFuture, @Async 로 비동기 api 구축, 동기 api와 비교
 
